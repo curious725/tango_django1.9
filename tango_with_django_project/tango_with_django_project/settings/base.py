@@ -19,7 +19,9 @@ from django.core.exceptions import ImproperlyConfigured
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+)
 
 # JSON-based secrets module
 with open(os.path.join(BASE_DIR, '..', 'secrets.json')) as f:
@@ -45,7 +47,7 @@ SECRET_KEY = get_secret("secret_key")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
