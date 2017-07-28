@@ -24,6 +24,7 @@ BASE_DIR = os.path.dirname(
 )
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
+MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
 # JSON-based secrets module
 with open(os.path.join(BASE_DIR, '..', 'secrets.json')) as f:
@@ -154,3 +155,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [STATIC_DIR, ]
+
+# Media files (files uploaded by users or administrators)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = MEDIA_DIR
