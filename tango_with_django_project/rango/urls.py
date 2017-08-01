@@ -8,5 +8,8 @@ urlpatterns = [
     url('^$', views.index, name='index'),
     # ex. /rango/about
     url('^about/$', views.about, name='about'),
+    # ex. /rango/category/python
+    url('^category/(?P<category_name_slug>[\w\-]+)/$',
+        views.show_category, name='show_category'),
 
 ]
