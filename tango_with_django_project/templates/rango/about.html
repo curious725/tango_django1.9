@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Rango</title>
-  </head>
-  <body>
-    <h1>Rango says here is the about page</h1>
-    <div>
-      <a href="{% url 'rango:index' %}">Index page</a><br><br>
-      <img src="{{ MEDIA_URL }}cat.jpg" alt="funny cat">
-    </div>
-  </body>
-</html>
+{% extends 'rango/base.html' %}
+
+{% load staticfiles %}
+
+{% block title_block %}
+  About
+{% endblock title_block %}
+
+{% block body_block %}
+  <h1>Rango says here is the about page</h1>
+  <div>
+    <a href="{% url 'rango:index' %}">Index page</a><br><br>
+    <img src="{{ MEDIA_URL }}cat.jpg" alt="funny cat">
+  </div>
+{% endblock body_block %}
