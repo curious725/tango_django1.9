@@ -161,3 +161,7 @@ STATICFILES_DIRS = [STATIC_DIR, ]
 # Media files (files uploaded by users or administrators)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = MEDIA_DIR
+
+# Redirect users to the LOGIN_URL if they are not logged in,
+# but try to achieve access to restricted by @login_required decorator
+LOGIN_URL = 'rango:login'
