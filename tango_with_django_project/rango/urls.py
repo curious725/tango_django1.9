@@ -6,6 +6,8 @@ app_name = 'rango'
 urlpatterns = [
     # ex. /rango
     url('^$', views.index, name='index'),
+    # ex. /rango/register
+    url('^register/$', views.register, name='register'),
     # ex. /rango/about
     url('^about/$', views.about, name='about'),
     # ex. /rango/add_category
@@ -16,5 +18,4 @@ urlpatterns = [
     # ex. /rango/category/python/add_page
     url('^category/(?P<category_name_slug>[\w\-]+)/add_page/$',
         views.add_page, name='add_page'),
-
 ]
