@@ -10,6 +10,8 @@ urlpatterns = [
     url('^register/$', views.register, name='register'),
     # ex. /rango/login
     url('^login/$', views.user_login, name='login'),
+    # ex. /rango/logout
+    url('^logout/$', views.user_logout, name='logout'),
     # ex. /rango/about
     url('^about/$', views.about, name='about'),
     # ex. /rango/add_category
