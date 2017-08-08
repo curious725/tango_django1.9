@@ -20,4 +20,6 @@ urlpatterns = [
     # ex. /rango/category/python/add_page
     url('^category/(?P<category_name_slug>[\w\-]+)/add_page/$',
         views.add_page, name='add_page'),
+    # ex. /rango/restricted
+    url('^restricted/$', views.restricted, name='restricted'),
 ]
