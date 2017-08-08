@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
+
 
 from .models import Category, Page
 from .forms import CategoryForm, PageForm
@@ -225,3 +227,10 @@ def user_login(request):
         return render(
             request, 'rango/login.html', {}
         )
+
+
+@login_required
+def restricted(request):
+    return HttpResponse(
+        "Since you're logged in, you can see this text"
+    )
