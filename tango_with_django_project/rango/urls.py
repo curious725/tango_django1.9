@@ -8,6 +8,8 @@ urlpatterns = [
     url('^$', views.index, name='index'),
     # ex. /rango/register
     url('^register/$', views.register, name='register'),
+    # ex. /rango/login
+    url('^login/$', views.user_login, name='login'),
     # ex. /rango/about
     url('^about/$', views.about, name='about'),
     # ex. /rango/add_category
