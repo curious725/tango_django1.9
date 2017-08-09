@@ -127,6 +127,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'OPTIONS': {'min_length': 6, },
     },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
@@ -136,6 +137,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Password hashing
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    'django.contrib.auth.hashers.BCryptPasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.SHA1PasswordHasher',
+    'django.contrib.auth.hashers.MD5PasswordHasher',
+    'django.contrib.auth.hashers.CryptPasswordHasher',
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
@@ -160,3 +171,7 @@ STATICFILES_DIRS = [STATIC_DIR, ]
 # Media files (files uploaded by users or administrators)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = MEDIA_DIR
+
+# Redirect users to the LOGIN_URL if they are not logged in,
+# but try to achieve access to restricted by @login_required decorator
+LOGIN_URL = 'rango:login'
