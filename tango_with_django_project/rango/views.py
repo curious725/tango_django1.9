@@ -183,6 +183,7 @@ def register(request):
 
 
 def user_login(request):
+    errors = {}
     # If the request is a HTTP POST, try to pull out the relevant information.
     if request.method == 'POST':
         # Gather the username and password provided by the user.
@@ -217,18 +218,17 @@ def user_login(request):
             print("Invalid login details: {0}, {1}".format(
                 username, password
             ))
-            return HttpResponse(
-                "Invalid login details supplied."
-            )
+            errors = {
+                'error_message': 'Invalid login details supplied.\n'
+                'Please enter your credentials again.'
+            }
 
-    # The request method is not a HTTP POST, so display the login form.
+    # If the request method is not a HTTP POST, so the login form will be
+    # just displayed.
     # This scenario would most likely be a HTTP GET.
-    else:
-        # No context variables to pass to the template system,
-        # hence the blank dictionary object...
-        return render(
-            request, 'rango/login.html', {}
-        )
+    return render(
+        request, 'rango/login.html', errors
+    )
 
 
 # Use the @login_required() decorator to ensure only those
