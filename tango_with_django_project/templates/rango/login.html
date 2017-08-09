@@ -10,6 +10,8 @@
   <form id="login_form" method="post" action="{% url 'rango:login' %}">
     {% csrf_token %}
 
+    <strong>{{ error_message }}</strong>
+    <br>
     Username:<br>
     <input type="text" name="username" value="" size="50"><br>
     Password:<br>
