@@ -38,7 +38,9 @@
       <li><a href="{% url 'rango:register' %}">Sign up</a></li>
       <br>
     {% endif %}
+    {% if user.is_authenticated %}
       <li><a href="{% url 'rango:add_category' %}">Add New Category</a></li>
+    {% endif %}
       <li><a href="{% url 'rango:about' %}">About</a></li>
       <li><a href="{% url 'rango:index' %}">Index</a></li>
     </ul>
