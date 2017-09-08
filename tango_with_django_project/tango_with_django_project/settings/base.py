@@ -184,4 +184,4 @@ REGISTRATION_AUTO_LOGIN = True
 LOGIN_REDIRECT_URL = '/rango/'
 # Redirect users to the LOGIN_URL if they are not logged in,
 # but try to achieve access to restricted by @login_required decorator
-LOGIN_URL = 'rango:login'
+LOGIN_URL = 'auth_login'
