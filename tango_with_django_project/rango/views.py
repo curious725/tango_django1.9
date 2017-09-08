@@ -252,6 +252,14 @@ def restricted(request):
     )
 
 
+# A helper method
+def get_server_side_cookie(request, cookie, default_val=None):
+    val = request.session.get(cookie)
+    if not val:
+        val = default_val
+    return val
+
+
 def visitor_cookie_handler(request, response):
     # Get the number of visits to the site.
     # We use the COOKIES.get() function to obtain the visits cookie.
