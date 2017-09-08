@@ -22,11 +22,11 @@ def index(request):
     page_most_viewed = Page.objects.order_by('-views')[:5]
     context_dict = {'categories_most_liked': category_most_liked,
                     'page_most_viewed': page_most_viewed}
-    response = render(
+    visitor_cookie_hanlder(request)
+    context_dict['visits'] = request.session['visits']
+    return render(
         request, 'rango/index.html', context=context_dict
     )
-    visitor_cookie_handler(request, response)
-    return response
 
 
 def about(request):
