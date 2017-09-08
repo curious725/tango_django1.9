@@ -30,12 +30,12 @@
   <div>
     <ul>
     {% if user.is_authenticated %}
-      <li><a href="{% url 'rango:logout' %}">Logout</a></li>
+      <li><a href="{% url 'auth_logout' %}?next=/rango/">Logout</a></li>
       <li><a href="{% url 'rango:restricted' %}">Restricted Page</a></li>
       <br>
     {% else %}
-      <li><a href="{% url 'rango:login' %}">Login</a></li>
-      <li><a href="{% url 'rango:register' %}">Sign up</a></li>
+      <li><a href="{% url 'auth_login' %}">Login</a></li>
+      <li><a href="{% url 'registration_register' %}">Sign up</a></li>
       <br>
     {% endif %}
     {% if user.is_authenticated %}
